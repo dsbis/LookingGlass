@@ -33,7 +33,7 @@ public class Enter : MonoBehaviour
                 //print(obj.tag + " " + counter[0, 4]);
             }
             counter[0, 0]++;
-            //print(this.name + " " + counter[0, 0]);
+            print(this.name + " " + counter[0, 0]);
         } else if (this.name.Equals("Region2"))
         {
             if (obj.tag.Equals("Blue"))
@@ -57,7 +57,7 @@ public class Enter : MonoBehaviour
                 //print(obj.tag + " " + counter[1, 4]);
             }
             counter[1, 0]++;
-           //print(this.name + " " + counter[1, 0]);
+           print(this.name + " " + counter[1, 0]);
         }
         else if (this.name.Equals("Region3"))
         {
@@ -82,7 +82,7 @@ public class Enter : MonoBehaviour
                 //print(obj.tag + " " + counter[2, 4]);
             }
             counter[2, 0]++;
-            //print(this.name + " " + counter[2, 0]);
+            print(this.name + " " + counter[2, 0]);
         }
         else if (this.name.Equals("Region4"))
         {
@@ -107,7 +107,7 @@ public class Enter : MonoBehaviour
                //print(obj.tag + " " + counter[3, 4]);
             }
             counter[3, 0]++;
-           // print(this.name + " " + counter[3, 0]);
+            print(this.name + " " + counter[3, 0]);
         }
         /*
         Color myColor = OnEnter.GetComponent<Renderer>().material.color;
@@ -146,7 +146,7 @@ public class Enter : MonoBehaviour
                // print("Lost" + obj.tag + " " + counter[0, 4]);
             }
             counter[0, 0]--;
-           // print(this.name + " " + counter[0, 0]);
+            print(this.name + " " + counter[0, 0]);
         }
         else if (this.name.Equals("Region2"))
         {
@@ -171,7 +171,7 @@ public class Enter : MonoBehaviour
                // print("Lost" + obj.tag + " " + counter[1, 4]);
             }
             counter[1, 0]--;
-            //print(this.name + " " + counter[1, 0]);
+            print(this.name + " " + counter[1, 0]);
         }
         else if (this.name.Equals("Region3"))
         {
@@ -196,7 +196,7 @@ public class Enter : MonoBehaviour
                // print("Lost" + obj.tag + " " + counter[2, 4]);
             }
             counter[2, 0]--;
-            //print(this.name + " " + counter[2, 0]);
+            print(this.name + " " + counter[2, 0]);
         }
         else if (this.name.Equals("Region4"))
         {
@@ -221,7 +221,7 @@ public class Enter : MonoBehaviour
                // print("Lost" + obj.tag + " " + counter[3, 4]);
             }
             counter[3, 0]--;
-            //print(this.name + " " + counter[3, 0]);
+            print(this.name + " " + counter[3, 0]);
         }
     }
 }
