@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SunMotion : MonoBehaviour
 {
+    private int direction = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,14 @@ public class SunMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * Time.deltaTime * 15.0f);
-        transform.Translate(Vector3.back * Time.deltaTime * 15.0f);
+       
+        transform.Translate(Vector3.down * Time.deltaTime * 75.0f * direction);
+        transform.Translate(Vector3.back * Time.deltaTime * 75.0f * direction);
+
+        if (transform.position.y < 375.0f || transform.position.y > 1000.0f)
+        {
+            direction *= -1;
+        }
+
     }
 }
