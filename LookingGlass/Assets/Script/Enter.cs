@@ -109,6 +109,7 @@ public class Enter : MonoBehaviour
             counter[3, 0]++;
             print(this.name + " " + counter[3, 0]);
         }
+       
         /*
         Color myColor = OnEnter.GetComponent<Renderer>().material.color;
         Color otherColor = new Color(0, 0, 255, 255);
