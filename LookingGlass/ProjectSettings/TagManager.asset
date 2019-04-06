@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Item
   - Region1
+  - Green
+  - Blue
+  - Yellow
+  - Red
   layers:
   - Default
   - TransparentFX
