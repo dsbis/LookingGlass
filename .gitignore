@@ -10,6 +10,7 @@
 /LookingGlass/[Bb]uilds/
 /LookingGlass/[Ll]ogs/
 
+
 # Never ignore Asset meta data
 !/LookingGlass/[Aa]ssets/**/*.meta
 
