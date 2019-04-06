@@ -3,7 +3,7 @@
 # .gitignore taken from https://github.com/github/gitignore/blob/master/Unity.gitignore
 # This .gitignore file should be placed at the root of your Unity project directory
 
-/[Ll]ibrary/
+/LookingGlass/[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
