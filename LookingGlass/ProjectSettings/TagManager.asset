@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Region1
+  - Green
+  - Blue
+  - Yellow
+  - Red
   layers:
   - Default
   - TransparentFX
