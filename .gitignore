@@ -3,21 +3,21 @@
 # .gitignore taken from https://github.com/github/gitignore/blob/master/Unity.gitignore
 # This .gitignore file should be placed at the root of your Unity project directory
 
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
+/LookingGlass/Library/
+/LookingGlass/[Tt]emp/
+/LookingGlass/[Oo]bj/
+/LookingGlass/[Bb]uild/
+/LookingGlass/[Bb]uilds/
+/LookingGlass/[Ll]ogs/
 
 # Never ignore Asset meta data
-!/[Aa]ssets/**/*.meta
+!/LookingGlass/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
 # TextMesh Pro files
-[Aa]ssets/TextMesh*Pro/
+/LookingGlass/[Aa]ssets/TextMesh*Pro/
 
 # Visual Studio cache directory
 .vs/
