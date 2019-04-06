@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SimpleMovement : MonoBehaviour
 {
+    public GameObject CenterEye;
+    public Texture GrabTexture;
+
+    private bool hitFlag;
+    private GameObject ActiveObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +21,28 @@ public class SimpleMovement : MonoBehaviour
     {
         OVRInput.Update();
 
+        RaycastHit rch;
+
         if (OVRInput.Get(OVRInput.Touch.PrimaryTouchpad))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(CenterEye.transform.forward * Time.deltaTime);
         }
 
-        transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+        if (Physics.Raycast(transform.position, CenterEye.transform.forward, out rch, 20))
+        {
+            ActiveObj = rch.transform.gameObject;
+            if (ActiveObj.tag.Equals("Item"))
+            {
+                ActiveObj.GetComponent<Renderer>().material.color = Color.green;
+            }
+            hitFlag = true;
+        } else if (hitFlag)
+        {
+            if (ActiveObj.tag.Equals("Item"))
+            {
+                ActiveObj.GetComponent<Renderer>().material.color = Color.white;
+            }
+            hitFlag = false;
+        }
     }
 }
