@@ -102,6 +102,7 @@ public class SpawningArea : MonoBehaviour
             {
                 ObjectToSpawn.tag = "Blue";
                 ObjectToSpawn.name = blueWords[totalBlue];
+                
                 totalBlue++;
                 flag = true;
             }
@@ -109,6 +110,7 @@ public class SpawningArea : MonoBehaviour
             {
                 ObjectToSpawn.tag = "Green";
                 ObjectToSpawn.name = greenWords[totalGreen];
+               
                 totalGreen++;
                 flag = true;
             }
@@ -116,6 +118,7 @@ public class SpawningArea : MonoBehaviour
             {
                 ObjectToSpawn.tag = "Red";
                 ObjectToSpawn.name = redWords[totalRed];
+                
                 totalRed++;
                 flag = true;
             }
@@ -125,6 +128,7 @@ public class SpawningArea : MonoBehaviour
                 {
                     ObjectToSpawn.tag = "Yellow";
                     ObjectToSpawn.name = yellowWords[totalYellow];
+                    
                     totalYellow++;
                 }
                 flag = true;
@@ -162,7 +166,23 @@ public class SpawningArea : MonoBehaviour
                 }
                 rndPosWithin = new Vector3(x, 0f, z);
                 rndPosWithin = transform.TransformPoint(rndPosWithin * .5f);        
-                Instantiate(ObjectToSpawn, rndPosWithin, transform.rotation);
+                GameObject spawnedObject = Instantiate(ObjectToSpawn, rndPosWithin, transform.rotation);
+                if (spawnedObject.tag.Equals("Blue"))
+                {
+                    spawnedObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 255);
+                }
+                else if (spawnedObject.tag.Equals("Red"))
+                {
+                    spawnedObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 255);
+                }
+                else if (spawnedObject.tag.Equals("Green"))
+                {
+                    spawnedObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 255);
+                }
+                else if (spawnedObject.tag.Equals("Yellow"))
+                {
+                    spawnedObject.GetComponent<Renderer>().material.color = new Color(255, 252, 0, 255);
+                }
                 flag = false;
             }
         }
