@@ -134,11 +134,35 @@ public class SpawningArea : MonoBehaviour
                 total++;
                 // Random position within this transform
                 Vector3 rndPosWithin;
-                rndPosWithin = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                rndPosWithin = transform.TransformPoint(rndPosWithin * .5f);
-                Debug.Log("It Worked");
+                ObjectToSpawn.AddComponent<GUIText>();
+                // ObjectToSpawn.GetComponent<GUIText>().g
+                float x = Random.Range(-1f, 1f);
+                float z = Random.Range(-1f, 1f);
+                if(!(x > 0.25f || x < -0.25f))
+                {
+                    if(x < 0)
+                    {
+                        x -= 0.25f;
+                    }
+                    else
+                    {
+                        x += 0.25f;
+                    }
+                }
+                if (!(z > 0.25f || z< -0.25f))
+                {
+                    if (z < 0)
+                    {
+                        z -= 0.25f;
+                    }
+                    else
+                    {
+                        z += 0.25f;
+                    }
+                }
+                rndPosWithin = new Vector3(x, 0f, z);
+                rndPosWithin = transform.TransformPoint(rndPosWithin * .5f);        
                 Instantiate(ObjectToSpawn, rndPosWithin, transform.rotation);
-                Debug.Log("It Worked for real");
                 flag = false;
             }
         }
