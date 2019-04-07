@@ -30,12 +30,13 @@ public class SpawningArea : MonoBehaviour
 
     void Start()
     {
+        WordBase.ReadTextFile();
         List<int> temp = new List<int>();
 
         int i = 0;
         while (i < 4)
         {
-            int randValue = Random.Range(0, 15);
+            int randValue = Random.Range(0, 64);
             if (!temp.Contains(randValue))
             {
                 temp.Add(randValue);
@@ -49,6 +50,7 @@ public class SpawningArea : MonoBehaviour
             {
                 if (l == 0)
                 {
+                    print(WordBase.wordBank[s, temp[0]]);
                     if (!WordBase.wordBank[s, temp[0]].Equals(""))
                     {
                         blueWords.Add(WordBase.wordBank[s, temp[0]]);
@@ -134,7 +136,9 @@ public class SpawningArea : MonoBehaviour
                 Vector3 rndPosWithin;
                 rndPosWithin = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
                 rndPosWithin = transform.TransformPoint(rndPosWithin * .5f);
+                Debug.Log("It Worked");
                 Instantiate(ObjectToSpawn, rndPosWithin, transform.rotation);
+                Debug.Log("It Worked for real");
                 flag = false;
             }
         }

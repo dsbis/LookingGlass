@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class WordBase : MonoBehaviour
 {
-    public static string[,] wordBank = new string[15, 65];
+    public static string[,] wordBank = new string[15, 64];
 
     void Start()
     {
         ReadTextFile();
     }
 
-    public void ReadTextFile() {
-        string path = "Assets/Resources/Book2.csv";
+    static public void ReadTextFile() {
+        string path = "Assets/Resources/Book1.csv";
         FileInfo sourceFile = new FileInfo(path);
         StreamReader reader = sourceFile.OpenText();
         string inputLine = "";
@@ -22,6 +22,7 @@ public class WordBase : MonoBehaviour
         while (!reader.EndOfStream) {
             String temp = "";
             inputLine = reader.ReadLine();
+            print(inputLine);
             char[] inputLineChar = inputLine.ToCharArray();
             for(int i = 0; i < inputLineChar.Length; i++)
             {
@@ -40,6 +41,14 @@ public class WordBase : MonoBehaviour
             rowNumber++;
         }
         reader.Close();
-        
+        /*
+        for(int i = 0; i < 15; i++)
+        {
+            for (int l = 0; l < 64; l++)
+            {
+                print(wordBank[i, l]);
+            }
+        }
+        */
     }
 }
