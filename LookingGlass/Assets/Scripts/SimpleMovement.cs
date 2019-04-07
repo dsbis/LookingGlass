@@ -14,6 +14,8 @@ public class SimpleMovement : MonoBehaviour
 
     private const float DEFAULT_DISTANCE = 5.0f;
 
+    private readonly string[] COLORS = new string[4] { "Green", "Blue", "Yellow", "Red" };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +42,13 @@ public class SimpleMovement : MonoBehaviour
         if (Physics.Raycast(ray, out rch, 20))
         {
             ActiveObj = rch.transform.gameObject;
-            if (ActiveObj.tag.Equals("Item"))
+            if (arrayIncludes(ActiveObj.tag))
             {
-                if (OVRInput.Get(OVRInput.Touch.PrimaryTouchpad))
+                if (OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) || Input.GetMouseButton(0))
                 {
                     Vector3 dir = ActiveObj.transform.position - transform.position;
                     ActiveObj.GetComponent<Renderer>().material.color = Color.red;
+                    ActiveObj.GetComponent<Rigidbody>().isKinematic = false;
                     Vector3 newPos = new Vector3(0.0f, 0.0f, 0.0f);
                     newPos.x = transform.position.x + ray.direction.x;
                     newPos.y = transform.position.y + ray.direction.y;
@@ -63,13 +66,20 @@ public class SimpleMovement : MonoBehaviour
             hitFlag = true;
         } else if (hitFlag)
         {
-            if (ActiveObj.tag.Equals("Item"))
-            {
-                ActiveObj.GetComponent<Renderer>().material.color = Color.white;
-            }
+            ActiveObj.GetComponent<Renderer>().material.color = Color.white;
+            ActiveObj.GetComponent<Rigidbody>().isKinematic = true;
 
             ActiveDistance = DEFAULT_DISTANCE;
             hitFlag = false;
         }
+    }
+
+    private bool arrayIncludes(string str)
+    {
+        foreach(string c in COLORS)
+        {
+            if (c.Equals(str)) return true;
+        }
+        return false;
     }
 }
