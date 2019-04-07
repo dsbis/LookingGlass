@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d53f28656a32e9419b91422947dde2f
+guid: bedab945c7e44e347baa65fd6ab2fcdb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -11,7 +11,6 @@ ModelImporter:
     4300000: Kirb-Solid
     7400000: Default Take
     9500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
