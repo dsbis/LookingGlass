@@ -6,6 +6,7 @@ public class SimpleMovement : MonoBehaviour
 {
     public GameObject CenterEye;
     public Texture GrabTexture;
+    public static string display;
 
     private bool hitFlag;
     private GameObject ActiveObj;
@@ -49,6 +50,7 @@ public class SimpleMovement : MonoBehaviour
                     Vector3 dir = ActiveObj.transform.position - transform.position;
                     ActiveObj.GetComponent<Renderer>().material.color = Color.red;
                     ActiveObj.GetComponent<Rigidbody>().isKinematic = false;
+                    display = ActiveObj.name;
                     Vector3 newPos = new Vector3(0.0f, 0.0f, 0.0f);
                     newPos.x = transform.position.x + ray.direction.x;
                     newPos.y = transform.position.y + ray.direction.y;
