@@ -8,6 +8,8 @@ public class Enter : MonoBehaviour
     public static int[,] counter = new int[4, 5];
     public static int x = 1;
 
+    private const int MAX_SIZE = 1;
+
     private void OnTriggerEnter(Collider obj)
     {
         if (this.name.Equals("Region1"))
@@ -109,27 +111,8 @@ public class Enter : MonoBehaviour
             counter[3, 0]++;
             print(this.name + " " + counter[3, 0]);
         }
-        // if (counter[0, 1] == SpawningArea.setBlue && counter[1, 2] == SpawningArea.setGreen && counter[2, 3] == SpawningArea.setRed && counter[3, 4] == SpawningArea.setYellow)
-        if (counter[0, 1] == 1 && counter[1, 2] == 2 && counter[2, 3] == 1 && counter[3, 4] == 1)
-        {
-            GameObject temp = GameObject.FindGameObjectWithTag("Blue");
-            while (temp != null)
-            {
-                Destroy(temp);
-                temp = GameObject.FindGameObjectWithTag("Blue");
-            }
-        }
-            /*
-            Color myColor = OnEnter.GetComponent<Renderer>().material.color;
-            Color otherColor = new Color(0, 0, 255, 255);
-            if (myColor.Equals(otherColor)){
-                OnEnter.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 255);
-            }
-            OnEnter.GetComponent<Renderer>().material.color = Color.red;
-            OnEnter.GetComponent<ConstantForce>().force = new Vector3(5 * x, 0, 0);
-            x = x * -1;
-            */
-        }
+
+    }
 
         private void OnTriggerExit(Collider obj)
         {
@@ -234,5 +217,22 @@ public class Enter : MonoBehaviour
                 print(this.name + " " + counter[3, 0]);
             }
         }
+
+    void Update()
+    {
+        if(this.gameObject.transform.GetChild(0))
+        {
+
+        }
+        bool greenGood = counter[0, 2] == MAX_SIZE;
+        bool redGood = counter[1, 3] == MAX_SIZE;
+        bool yellowGood = counter[2, 4] == MAX_SIZE;
+        bool blueGood = counter[3, 1] == MAX_SIZE;
+
+        if(greenGood && blueGood && redGood && yellowGood)
+        {
+            Debug.Log("GAME IS DONE");
+        }
     }
+}
 
