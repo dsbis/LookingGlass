@@ -134,8 +134,8 @@ public class SpawningArea : MonoBehaviour
                 total++;
                 // Random position within this transform
                 Vector3 rndPosWithin;
-                ObjectToSpawn.AddComponent<GUIText>();
-                ObjectToSpawn.GetComponent<GUIText>().text = ObjectToSpawn.name;
+                // ObjectToSpawn.AddComponent<GUIText>();
+                // ObjectToSpawn.GetComponent<GUIText>().text = ObjectToSpawn.name;
                 float x = Random.Range(-1f, 1f);
                 float z = Random.Range(-1f, 1f);
                 if(!(x > 0.25f || x < -0.25f))
