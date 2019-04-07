@@ -23,5 +23,6 @@ public class SunMotion : MonoBehaviour
             direction *= -1;
         }
 
+        transform.Rotate(new Vector3(0.0f, 2.0f));
     }
 }
