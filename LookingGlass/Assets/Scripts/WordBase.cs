@@ -9,9 +9,4 @@ public class WordBase : MonoBehaviour
     {
         
     }
-
-    void ReadCSVFile()
-    {
-        StreamReader strReader = new StreamReader()
-    }
 }

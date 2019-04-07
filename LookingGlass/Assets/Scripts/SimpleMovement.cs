@@ -63,10 +63,8 @@ public class SimpleMovement : MonoBehaviour
             hitFlag = true;
         } else if (hitFlag)
         {
-            if (ActiveObj.tag.Equals("Item"))
-            {
-                ActiveObj.GetComponent<Renderer>().material.color = Color.white;
-            }
+
+            ActiveObj.GetComponent<Renderer>().material.color = Color.white;
 
             ActiveDistance = DEFAULT_DISTANCE;
             hitFlag = false;
